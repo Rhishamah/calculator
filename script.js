@@ -48,8 +48,35 @@ document.getElementById("buttons").addEventListener("click", (e) => {
   }
 
   if (operator && previousInput) {
-    display.textContent = previousInput + " " + operator + (currentInput ? " " + currentInput : "");
+    display.textContent =
+      previousInput + " " + operator + (currentInput ? " " + currentInput : "");
   } else {
     display.textContent = currentInput || previousInput || "0";
   }
+});
+
+document.addEventListener("keydown", (e) => {
+  const map = {
+    0: "0",
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    "+": "+",
+    "-": "-",
+    "*": "*",
+    "/": "/",
+    ".": ".",
+    Enter: "=",
+    Backspace: "del",
+    Escape: "C",
+  };
+  const mapped = map[e.key];
+  if (!mapped) return;
+  document.querySelector(`[data-value="${mapped}"]`).click();
 });
