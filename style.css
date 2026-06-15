@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a2e;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  background-color: #16213e;
+  border-radius: 16px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#display {
+  background-color: #0f3460;
+  color: white;
+  text-align: right;
+  padding: 20px;
+  font-size: 2rem;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  min-height: 70px;
+  word-break: break-all;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 18px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #533483;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #6a45a0;
+}
+
+/* Operator buttons */
+.btn[data-value="+"],
+.btn[data-value="-"],
+.btn[data-value="*"],
+.btn[data-value="/"] {
+  background-color: #e94560;
+}
+
+.btn[data-value="+"]:hover,
+.btn[data-value="-"]:hover,
+.btn[data-value="*"]:hover,
+.btn[data-value="/"]:hover {
+  background-color: #ff6b81;
+}
+
+/* Equals button */
+.btn[data-value="="] {
+  background-color: #0f9b58;
+}
+
+.btn[data-value="="]:hover {
+  background-color: #13c46e;
+}
+
+/* Clear and DEL buttons */
+.btn[data-value="C"],
+.btn[data-value="del"] {
+  background-color: #e94560;
+}
