@@ -47,5 +47,9 @@ document.getElementById("buttons").addEventListener("click", (e) => {
     currentInput += value;
   }
 
-  display.textContent = currentInput || previousInput || "0";
+  if (operator && previousInput) {
+    display.textContent = previousInput + " " + operator + (currentInput ? " " + currentInput : "");
+  } else {
+    display.textContent = currentInput || previousInput || "0";
+  }
 });
