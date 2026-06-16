@@ -80,3 +80,5 @@ document.addEventListener("keydown", (e) => {
   if (!mapped) return;
   document.querySelector(`[data-value="${mapped}"]`).click();
 });
+// limit display length
+currentInput = String(parseFloat(result.toFixed(10)));
